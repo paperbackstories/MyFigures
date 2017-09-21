@@ -1,21 +1,27 @@
 
-difference(){
+Speaker();
 
-intersection()
+module Speaker()
 {
-	translate([0, 0, -28])
-		sphere(r=30, $fn=100, center=true);
-	cylinder(h=4, r=10, center=true);
-}
+	rotate([90, 0, 0])
+	
+	difference(){
 
-for (x=[-11 : 22 : 11])
-{
-	for (y=[-2 : 4 : 2])
-	{
-		translate([x, y, 0])
-		rotate([0, 0, 90])
-		cube([2, 20, 20], center=true);
-
+		union()
+		{
+			translate([0, 0, -2])
+				cylinder(h=4, r=10, center=true);
+			resize([20, 20, 4])
+				sphere(r=10, center=true);
+		}
+		for (x=[-11 : 22 : 11])
+		{
+			for (y=[-6 : 4 : 6])
+			{
+				translate([x, y, 0])
+				rotate([0, 0, 90])
+				cube([2, 20, 20], center=true);
+			}
+		}
 	}
-}
 }

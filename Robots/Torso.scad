@@ -1,15 +1,20 @@
+translate([21, 0, 20])
 
+color("green")
+Speaker();
 
 Torso();
 
 
+// waist
 translate([0, 0, -2.5])
 cylinder(h=5, d=35, center=true);
 
-translate([-20, 0, 20])
-
-color("green")
-sphere(10);
+//neck
+translate([0, 0, 56])
+cylinder(h=10, d=30, center=true);
+translate([0, 0, 58])
+cylinder(h=10, d=27, center=true);
 
 
 
@@ -60,3 +65,27 @@ module LeftShoulder()
 	}
 }
 
+module Speaker()
+{
+	rotate([0, 90, 0])
+	
+	difference(){
+
+		union()
+		{
+			translate([0, 0, -2])
+				cylinder(h=4, r=10, center=true);
+			resize([20, 20, 4])
+				sphere(r=10, center=true);
+		}
+		for (x=[-11 : 22 : 11])
+		{
+			for (y=[-6 : 4 : 6])
+			{
+				translate([x, y, 0])
+				rotate([0, 0, 90])
+				cube([2, 20, 20], center=true);
+			}
+		}
+	}
+}
