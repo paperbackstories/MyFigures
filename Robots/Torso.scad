@@ -1,3 +1,5 @@
+$fn=100;
+
 translate([21, 0, 20])
 
 color("green")
@@ -8,20 +10,32 @@ Torso();
 
 // waist
 translate([0, 0, -2.5])
-cylinder(h=5, d=35, center=true);
+	cylinder(h=5, d=35, center=true);
 
 //neck
 translate([0, 0, 56])
-cylinder(h=10, d=30, center=true);
+	cylinder(h=10, d=30, center=true);
 translate([0, 0, 58])
-cylinder(h=10, d=27, center=true);
+	cylinder(h=10, d=27, center=true);
 
+// head
+translate([0, 0, 80])
+	resize([30, 30, 50])
+		sphere(20);
 
+translate([0, 0, 80])
+	rotate([90, 0, 0])
+		resize([35, 60, 2])
+		cylinder(h=2, r=20);
 
 
 //Torso();
 module Torso()
 {
+	// TODO: change torso to 
+	// rotate_extrude 45 followed 
+	// by a linear_extrude
+	
 	translate([0, 0, 40])
 	rotate([90, 0, 0])
 	cylinder(h=40, r=20, center=true);
