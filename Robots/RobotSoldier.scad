@@ -31,21 +31,28 @@ module RobotSoldier()
 	}
 
 	translate([0, -35, 35])
+	rotate([-10, 0, 0])
 	Arm();
 
-	translate([0, 35, 35])
-	Arm();
 
 }
 module Arm()
 {
 	color("red")
 		sphere(12, center = true);
-	translate([0, 0, -25])
-		cylinder(h=50, r=5, center=true);
+	color("gray")
+	{
+		translate([0, 0, -12])
+			Pancake(height=4, diameter=18);
+
+		translate([0, 0, -10])
+			cylinder(h=20, r=6, center=true);
+	}
+	translate([0, 0, -20])
+		cylinder(h=40, r=5, center=true);
 	color("red")
-		translate([0, 0, -50])
-			sphere(10, center = true);
-	translate([0, 0, -75])
-		cylinder(h=50, r=5, center=true);
+		translate([0, 0, -40])
+			sphere(8, center = true);
+	translate([0, 0, -60])
+		cylinder(h=30, r=5, center=true);
 }
