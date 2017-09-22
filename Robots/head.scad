@@ -79,7 +79,7 @@ module Head()
 			sphere(r=2, center=true);
 	
 	translate([0, 0, -15])
-		pancake(height=2, diameter=40);
+		pancake(height=2, diameter=30);
 	translate([0, 0, -17])
-		pancake(height=2, diameter=40);
+		pancake(height=2, diameter=30);
 }

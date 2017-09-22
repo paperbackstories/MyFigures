@@ -1,16 +1,16 @@
-use <torso2.scad>;
+use <collar.scad>;
 use <speaker.scad>;
 use <head.scad>;
 
+$fn=100;
 
-translate([24, 0, 30])
-	rotate([0, 90, 0])
+translate([24, 0, 20])
 		color("green")
 			Speaker();
 
 
 translate([0, 0, 28])
-	Torso();
+	Collar();
 
-translate([0, 0, 70])
+translate([0, 0, 75])
 	Head();
