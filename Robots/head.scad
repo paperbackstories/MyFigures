@@ -1,5 +1,5 @@
 use <pancake.scad>;
-$fn=100;
+//$fn=100;
 
 Head();
 

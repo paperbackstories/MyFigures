@@ -1,6 +1,7 @@
-$fn=100;
+//$fn=100;
 
-//Torso();
+Torso();
+
 module Torso()
 {
 	// TODO: change torso to 
