@@ -69,17 +69,19 @@ module Head()
 	
 	translate([0, -15, 3])
 		rotate([90, 0, 0])
-			pancake(height=4, diameter=8);
+			Pancake(height=4, diameter=8);
 	translate([0, -18, 3])
+		color("red")
 			sphere(r=2, center=true);
 	translate([0, 15, 3])
 		rotate([90, 0, 0])
-			pancake(height=4, diameter=8);
+			Pancake(height=4, diameter=8);
 	translate([0, 18, 3])
+		color("red")
 			sphere(r=2, center=true);
 	
 	translate([0, 0, -15])
-		pancake(height=2, diameter=30);
+		Pancake(height=2, diameter=30);
 	translate([0, 0, -17])
-		pancake(height=2, diameter=30);
+		Pancake(height=2, diameter=30);
 }

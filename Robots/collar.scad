@@ -11,7 +11,7 @@ module Collar()
 		Torso();
 
 		translate([0, 0, 25])
-		color("green")
+		//color("green")
 		{
 			difference()
 			{

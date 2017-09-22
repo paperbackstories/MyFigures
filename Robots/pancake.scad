@@ -1,20 +1,29 @@
-//$fn=100;
+$fn=100;
 
-for (z=[-6:2:6])
-	translate([0, 0, z]) 
-		pancake(2, 50);
+//for (z=[-6:2:6])
+//	translate([0, 0, z]) 
+		Pancake(6, 100);
 
-module pancake(height, diameter)
+module Pancake(height, diameter)
 {
 	radius =  diameter / 2;
 	width = radius - (height / 2);
 	
 	rotate_extrude()
 	{
-		translate([width / 2, 0, 0])
-			square([width, height], center=true);
-		
-		translate([width, 0, 0])
-			circle(d = height, center = true);
+		difference()
+		{
+			union()
+			{
+				translate([width / 2, 0, 0])
+					square([width, height], center=true);
+				
+				translate([width, 0, 0])
+					circle(d = height, center = true);
+			}
+			color("green")
+			translate([-height/2, 0, 0])
+				square(height, center = true);
+		}
 	}
 }
