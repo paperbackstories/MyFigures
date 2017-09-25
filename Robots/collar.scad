@@ -32,6 +32,6 @@ module Collar()
 	//			cube([20, 20, 10], center=true);
 	//}
 
-	translate([0, 0, 20])
-		cylinder(r=10, h=10);
+	translate([0, 0, 25])
+		cylinder(r=10, h=15);
 }

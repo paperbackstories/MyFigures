@@ -16,22 +16,25 @@ module Head()
 			difference()
 			{
 				color("green")
-					resize([35, 20, 60])
+					translate([-1, 0, 2])
+					resize([35, 20, 55])
 						rotate([90, 0, 0])
 							cylinder(h=2, r=20, center=true);
 
 				color("red")
 				{
-					translate([0,16,30])
+					translate([0,16,35])
 						cube([40, 30, 60], center=true);
-					translate([0,16,0])
+					translate([0,16,2])
+						resize([40, 30, 40])
 						rotate([0, 90, 0])
 							cylinder(d=30, h=40, center=true);
 					translate([-15,16,-10])
 						cube([40, 30, 60], center=true);
-					translate([0,-16,30])
+					translate([0,-16,35])
 						cube([40, 30, 60], center=true);
-					translate([0,-16,0])
+					translate([0,-16,2])
+						resize([40, 30, 40])
 						rotate([0, 90, 0])
 							cylinder(d=30, h=40, center=true);
 					translate([-15,-16,-10])
@@ -80,8 +83,8 @@ module Head()
 		color("red")
 			sphere(r=2, center=true);
 	
-	translate([0, 0, -15])
+	translate([0, 0, -16])
 		Pancake(height=2, diameter=30);
-	translate([0, 0, -17])
+	translate([0, 0, -18])
 		Pancake(height=2, diameter=30);
 }
