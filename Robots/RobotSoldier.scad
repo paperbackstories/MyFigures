@@ -1,4 +1,4 @@
-use <collar2.scad>;
+use <collar.scad>;
 use <speaker.scad>;
 use <head.scad>;
 use <pancake.scad>
@@ -19,7 +19,7 @@ module RobotSoldier()
 	translate([0, 0, 28])
 		Collar();
 	translate([0, 0, 80])
-scale(1.25)
+scale(1.2)
 		Head();
 
 	color("gray")
@@ -65,6 +65,11 @@ module Arm()
 				sphere(8, center = true);
 			translate([0, 0, -15])
 				cylinder(h=30, r=5, center=true);
+			color("gray")
+			{
+				translate([0, 0, -5])
+					cylinder(h=5, r=6, center=true);
+			}
 		}
 	}
 }

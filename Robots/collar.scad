@@ -1,5 +1,5 @@
 use <torso.scad>;
-
+use <pancake.scad>;
 
 
 $fn = 100;
@@ -35,8 +35,19 @@ module Collar()
 
 	Torso();
 
-	resize([30, 22, 15])
+	resize([28, 22, 15])
 	translate([0, 0, 20])
 		cylinder(r=15, h=15);
+	translate([0, -25, 7])
+		rotate([-75, 0, 0])
+		color("gray")
+			Pancake(height=4, diameter=43);
+
+	mirror([0, 1, 0])
+	translate([0, -25, 7])
+		rotate([-75, 0, 0])
+		color("gray")
+			Pancake(height=4, diameter=43);
+
 
 }
