@@ -1,37 +1,42 @@
 use <torso.scad>;
 
+
+
+$fn = 100;
+
 Collar();
 
 module Collar()
 {
 	color("green")
-	scale([1.1, 1, 1.1])
+	scale(1.1)
 	difference()
 	{
 		Torso();
-
-		translate([0, 0, 25])
-		//color("green")
+		translate([0, 0, -135])
+		color("green")
+		difference()
 		{
-			difference()
-			{
+			translate([0, 0, 100])
 				cube([90, 100, 200], center=true);
-				rotate([0, 90,0])
-					cylinder(h=100, d=40, center=true);
 
-			}
-			rotate([0, 90,0])
-				cylinder(h=100, d=20, center=true);
+			translate([0, 0, 200])
+				rotate([-90, 0, 0])
+					rotate([0, 0, 45])
+						rotate_extrude(angle=90)
+							translate([40, 0, 0])
+								difference()
+								{
+									circle(20);
+									circle(10);
+								}
 		}
 	}
 
-	//difference()
-	//{
-		Torso();
-	//	translate([0, 0, 25])
-	//			cube([20, 20, 10], center=true);
-	//}
+	Torso();
 
-	translate([0, 0, 25])
-		cylinder(r=10, h=15);
+	resize([30, 22, 15])
+	translate([0, 0, 20])
+		cylinder(r=15, h=15);
+
 }

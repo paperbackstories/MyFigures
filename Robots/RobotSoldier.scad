@@ -31,7 +31,7 @@ scale(1.25)
 	}
 
 	translate([0, -35, 35])
-	rotate([-30, 0, 0])
+	rotate([-30, 10, 0])
 	Arm();
 
 

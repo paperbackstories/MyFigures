@@ -1,5 +1,5 @@
 use <pancake.scad>;
-//$fn=100;
+$fn=100;
 
 Head();
 
@@ -17,13 +17,14 @@ module Head()
 			{
 				color("green")
 					translate([-1, 0, 2])
-					resize([35, 20, 55])
+					resize([35, 35, 55])
 						rotate([90, 0, 0])
-							cylinder(h=2, r=20, center=true);
+							sphere(r=20, center=true);
+							//cylinder(h=2, r=20, center=true);
 
 				color("red")
 				{
-					translate([0,16,35])
+					translate([0,16,30])
 						cube([40, 30, 60], center=true);
 					translate([0,16,2])
 						resize([40, 30, 40])
@@ -31,7 +32,7 @@ module Head()
 							cylinder(d=30, h=40, center=true);
 					translate([-15,16,-10])
 						cube([40, 30, 60], center=true);
-					translate([0,-16,35])
+					translate([0,-16,30])
 						cube([40, 30, 60], center=true);
 					translate([0,-16,2])
 						resize([40, 30, 40])
@@ -69,22 +70,26 @@ module Head()
 				sphere(4);
 		}
 	}
-	
+	color("Gray")
+	{
 	translate([0, -15, 3])
 		rotate([90, 0, 0])
 			Pancake(height=4, diameter=8);
-	translate([0, -18, 3])
-		color("red")
-			sphere(r=2, center=true);
 	translate([0, 15, 3])
 		rotate([90, 0, 0])
 			Pancake(height=4, diameter=8);
-	translate([0, 18, 3])
+	}
+	translate([0, -17, 3])
 		color("red")
 			sphere(r=2, center=true);
-	
-	translate([0, 0, -16])
-		Pancake(height=2, diameter=30);
-	translate([0, 0, -18])
-		Pancake(height=2, diameter=30);
+	translate([0, 17, 3])
+		color("red")
+			sphere(r=2, center=true);
+	color("gray")
+	{
+		translate([0, 0, -16])
+			Pancake(height=2, diameter=28);
+		translate([0, 0, -18])
+			Pancake(height=2, diameter=28);
+	}
 }
