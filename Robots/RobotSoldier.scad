@@ -25,9 +25,9 @@ scale(1.2)
 	color("gray")
 	{
 		translate([0, 0, -3])
-			Pancake(height=6, diameter=38);
+			Pancake(height=6, diameter=40);
 		translate([0, 0, -9])
-			Pancake(height=6, diameter=38);
+			Pancake(height=6, diameter=40);
 	}
 
 	translate([0, -35, 35])
